@@ -5,23 +5,26 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorControllerServiceImpl implements CalculatorControllerService {
-    @Override
-    public String prus(Integer number1, Integer number2) {
-        return null;
+    public String plus(Integer number1, Integer number2) {
+        return String.format("Сложение: %d + %d = %d", number1, number2, (number1+number2));
     }
 
     @Override
     public String minus(Integer number1, Integer number2) {
-        return null;
+        return String.format("Вычитание: %d - %d = %d", number1, number2, (number1-number2));
     }
 
     @Override
     public String multiply(Integer number1, Integer number2) {
-        return null;
+        return String.format("Умножение: %d * %d = %d", number1, number2, (number1 * number2));
     }
 
     @Override
     public String divide(Integer number1, Integer number2) {
-        return null;
+        if (number2 == 0) {
+            throw new IllegalArgumentException("Значение null или 0 значение в переменной");
+        }
+
+        return String.format("Деление: %d / %d = %d", number1, number2, (number1 / number2));
     }
 }

@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CalculatorController {
 
-    private final CalculatorControllerService contrServ;
+    private final CalculatorControllerServiceImpl contrServ;
 
-    @GetMapping("/plus/{val1}/{val2}")
-    public String plus(@PathVariable("val1") Integer val1,
-                       @PathVariable("val2") Integer val2 ){
-        return "empty";
+    @GetMapping("/plus/{number1}/{number2}")
+    public String plus(@PathVariable("number1") Integer number1,
+                       @PathVariable("number2") Integer number2 ){
+        return contrServ.plus(number1, number2);
     }
 
-    @GetMapping("/minus/{val1}/{val2}")
-    public String minus(@PathVariable("val1") Integer val1,
-                       @PathVariable("val2") Integer val2 ){
-        return "empty";
+    @GetMapping("/minus/{number1}/{number2}")
+    public String minus(@PathVariable("number1") Integer number1,
+                       @PathVariable("number2") Integer number2 ){
+        return contrServ.minus(number1, number2);
     }
 
-    @GetMapping("/multiply/{val1}/{val2}")
-    public String multiply(@PathVariable("val1") Integer val1,
-                        @PathVariable("val2") Integer val2 ){
-        return "empty";
+    @GetMapping("/multiply/{number1}/{number2}")
+    public String multiply(@PathVariable("number1") Integer number1,
+                        @PathVariable("number2") Integer number2 ){
+        return contrServ.multiply(number1, number2);
     }
 
-    @GetMapping("/divide/{val1}/{val2}")
-    public String divide(@PathVariable("val1") Integer val1,
-                           @PathVariable("val2") Integer val2 ){
-        return "empty";
+    @GetMapping("/divide/{number1}/{number2}")
+    public String divide(@PathVariable("number1") Integer number1,
+                           @PathVariable("number2") Integer number2 ){
+        return contrServ.divide(number1, number2);
     }
 
 }
