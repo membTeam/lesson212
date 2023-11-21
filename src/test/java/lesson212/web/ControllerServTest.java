@@ -1,6 +1,8 @@
 package lesson212.web;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import lesson212.exception.ErrIllegalArgException;
 import org.junit.jupiter.api.Test;
 
 import static lesson212.web.constArguments.ConstArguments.*;
@@ -67,7 +69,7 @@ public class ControllerServTest {
     public void divide_withZeroArg2() {
 
         final Integer number1 = NUMBERis80, number2 = NUMBERisZero;
-        assertThrows(IllegalArgumentException.class, ()-> servImpl.divide(number1, number2));
+        assertThrows(ErrIllegalArgException.class, ()-> servImpl.divide(number1, number2));
     }
 
     @Test

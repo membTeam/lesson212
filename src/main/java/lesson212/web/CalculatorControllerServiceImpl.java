@@ -1,5 +1,6 @@
 package lesson212.web;
 
+import lesson212.exception.ErrIllegalArgException;
 import org.springframework.stereotype.Service;
 
 
@@ -22,7 +23,7 @@ public class CalculatorControllerServiceImpl implements CalculatorControllerServ
     @Override
     public String divide(Integer number1, Integer number2) {
         if (number2 == 0) {
-            throw new IllegalArgumentException("Значение null или 0 значение в переменной");
+            throw new ErrIllegalArgException("Значение null или 0 значение в переменной");
         }
 
         return String.format("Деление: %d / %d = %d", number1, number2, (number1 / number2));
