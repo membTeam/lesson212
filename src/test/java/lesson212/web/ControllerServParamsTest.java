@@ -1,5 +1,6 @@
 package lesson212.web;
 
+import lesson212.exception.ErrIllegalArgException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -7,7 +8,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.stream.Stream;
-
 import static lesson212.web.constArguments.ConstArguments.*;
 
 
@@ -18,7 +18,7 @@ public class ControllerServParamsTest {
     @ParameterizedTest
     @MethodSource("provideParamsForDivideTests")
     public void divideForZeroTest(Integer number1, Integer number2) {
-        assertThrows(IllegalArgumentException.class, () -> servImpl.divide(number1, number2));
+        assertThrows(ErrIllegalArgException.class, () -> servImpl.divide(number1, number2));
     }
 
     @ParameterizedTest
